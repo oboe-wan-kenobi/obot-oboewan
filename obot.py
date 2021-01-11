@@ -70,4 +70,4 @@ async def mute(ctx, opt, member: discord.Member, seconds = 0):
         await member.remove_roles(muteRole)
         await ctx.send('User has been unmuted.')
 
-bot.run('Nzk3NjUyOTAzNDU5NDIyMjM4.X_pmJw.f2kraIsqByzCId4Kau9bGU3Hvlo')
+bot.run('Nzk3NjUyOTAzNDU5NDIyMjM4.X_pmJw.-FL1CDt6FVO_Tqg5CrnulEMQwq8')
