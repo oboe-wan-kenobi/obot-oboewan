@@ -2,6 +2,10 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import asyncio
+from dotenv import load_dotenv
+import os
+
+load_dotenv('.env')
 
 intents = discord.Intents.default()
 intents.members = True
@@ -70,4 +74,4 @@ async def mute(ctx, opt, member: discord.Member, seconds = 0):
         await member.remove_roles(muteRole)
         await ctx.send('User has been unmuted.')
 
-bot.run('Nzk3NjUyOTAzNDU5NDIyMjM4.X_pmJw.-FL1CDt6FVO_Tqg5CrnulEMQwq8')
+bot.run(os.getenv('token'))
