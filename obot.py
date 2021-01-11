@@ -4,7 +4,7 @@ from discord.utils import get
 import asyncio
 import os
 
-token = os.environ.get('TIMES',3)
+token = os.environ.get('token')
 
 intents = discord.Intents.default()
 intents.members = True
