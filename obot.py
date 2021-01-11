@@ -16,6 +16,11 @@ bot = commands.Bot(command_prefix='&', intents=intents)
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
+@bot.event
+async def on_message(message):
+    if str(message).startswith("&"):
+        print("Command recieved.")
+
 @bot.command()
 @commands.has_role('Administrators')
 async def msga(ctx, msg, channelName, credit=False):
