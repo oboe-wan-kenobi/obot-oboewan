@@ -6,12 +6,7 @@ import os
 
 token = os.environ.get('token')
 
-ozzypoints = None
-mystpoints = None
 
-async def getPoints():
-    ozzypoints = os.environ.get('ozzy')
-    mystpoints = os.environ.get('myst')
 
 async def setEnv(envName, val):
     os.environ[envName] = str(val)
@@ -40,9 +35,9 @@ async def house(ctx, mode, house, arg1=None):
         setEnv(house, args1)
 
 @bot.command()
-async def getpts(ctx, house):
+async def getpts(ctx):
     getPoints()
-    await ctx.send(str(ozzypoints) + " " + str(mystpoints))
+    await ctx.send(str(os.environ.get('ozzy')) + " " + str(os.environ.get('myst')))
 
 @bot.command()
 @commands.has_role('Administrators')
