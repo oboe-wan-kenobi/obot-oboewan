@@ -28,10 +28,10 @@ async def on_ready():
 
 @bot.command()
 @commands.has_role('Administrators')
-async def house(ctx, mode, house, arg1=None):
-    if mode == 'setlvl' and args1 != None:
+async def house(ctx, mode, house, arg1=null):
+    if mode == 'setlvl' and args1 != null:
         setEnv(house, args1)
-    elif mode == 'addlvl' and args1 != None:
+    elif mode == 'addlvl' and args1 != null:
         setEnv(house, args1)
 
 @bot.command()
