@@ -6,6 +6,16 @@ import os
 
 token = os.environ.get('token')
 
+ozzypoints = None
+mystpoints = None
+
+async def getPoints():
+    ozzypoints = os.environ.get('ozzy')
+    mystpoints = os.environ.get('myst')
+
+async def setEnv(envName, val):
+    os.environ[envName] = str(val)
+
 intents = discord.Intents.default()
 intents.members = True
 
@@ -20,6 +30,19 @@ async def on_ready():
 #async def on_message(message):
 #    if str(message).startswith("&"):
 #        print("Command recieved.")
+
+@bot.command()
+@commands.has_role('Administrators')
+async def house(ctx, mode, house, arg1=None):
+    if mode == 'setlvl' and args1 != None:
+        setEnv(house, args1)
+    elif mode == 'addlvl' and args1 != None:
+        setEnv(house, args1)
+
+@bot.command()
+async def getpts(ctx, house)
+    getPoints()
+    await ctx.send(ozzypoints + " " + mystpoints)
 
 @bot.command()
 @commands.has_role('Administrators')
