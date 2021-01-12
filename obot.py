@@ -36,7 +36,6 @@ async def house(ctx, mode, house, arg1=None):
 
 @bot.command()
 async def getpts(ctx):
-    getPoints()
     await ctx.send(str(os.environ.get('ozzy')) + " " + str(os.environ.get('myst')))
 
 @bot.command()
