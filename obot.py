@@ -42,7 +42,7 @@ async def house(ctx, mode, house, arg1=None):
 @bot.command()
 async def getpts(ctx, house):
     getPoints()
-    await ctx.send(ozzypoints + " " + mystpoints)
+    await ctx.send(str(ozzypoints) + " " + str(mystpoints))
 
 @bot.command()
 @commands.has_role('Administrators')
