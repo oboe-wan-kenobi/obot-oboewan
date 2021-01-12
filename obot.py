@@ -30,9 +30,9 @@ async def on_ready():
 @commands.has_role('Administrators')
 async def house(ctx, mode, house, arg1='def'):
     if mode == 'setlvl' and arg1 != 'def':
-        setEnv(house, arg1)
+        await setEnv(house, arg1)
     elif mode == 'addlvl' and arg1 != 'def':
-        setEnv(house, arg1)
+        await setEnv(house, arg1)
 
 @bot.command()
 async def getpts(ctx):
